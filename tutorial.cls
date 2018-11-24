@@ -153,5 +153,5 @@
 %\newenvironment{solutions}{\pgfkeys{/tutorial, part=Solutions}\clearpage}{\addtostream{pagebounds}{\thepage}\clearpage}
 %\newenvironment{instructions}{\pgfkeys{/tutorial, part=Instructions}\clearpage}{\addtostream{pagebounds}{\thepage}\clearpage}
 \newenvironment{objectives}{\subsection*{Learning Objectives}\begin{leftborderbox}[colframe=uoftyellow, colback=white]}{\end{leftborderbox}}
-
-
+\endinput
+% ex: filetype=tex
