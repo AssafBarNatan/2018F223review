@@ -35,20 +35,24 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
-\newcommand{\proj}{\mathrm{proj}}
-\newcommand{\Proj}{\mathrm{proj}}
-\newcommand{\Perp}{\mathrm{perp}}
+
+% This is dangerous, but ok.
 \renewcommand{\span}{\mathrm{span}\,}
-\newcommand{\Span}{\mathrm{span}\,}
-\newcommand{\Img}{\mathrm{img}\,}
-\newcommand{\Null}{\mathrm{null}\,}
-\newcommand{\Range}{\mathrm{range}\,}
-\newcommand{\rref}{\mathrm{rref}}
-\newcommand{\rank}{\mathrm{rank}}
-\newcommand{\Rank}{\mathrm{rank}}
-\newcommand{\nnul}{\mathrm{nullity}}
+
+\DeclareMathOperator{\proj} {proj}
+\DeclareMathOperator{\Proj} {proj}
+\DeclareMathOperator{\Perp} {perp}
+\DeclareMathOperator{\Span} {span}
+\DeclareMathOperator{\Img}  {img}
+\DeclareMathOperator{\Null} {null}
+\DeclareMathOperator{\Range}{range}
+\DeclareMathOperator{\rref} {rref}
+\DeclareMathOperator{\rank} {rank}
+\DeclareMathOperator{\Rank} {rank}
+\DeclareMathOperator{\nnul} {nullity}
+\DeclareMathOperator{\chr}  {char}
+
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\chr}{\mathrm{char}}
 \renewcommand{\d}{\mathrm{d}}
 
 
@@ -60,25 +64,37 @@
 \newtheorem{thm}{Theorem}[section]
 
 \pgfkeys{/tutorial,
-	name={Tutorial 9},
+	name={Final Review Session},
 	author={Jason Siefken},
 	course={MAT 223},
-	date={November 29--December 5},
+	date={December 6-7},
 	term={Fall 2018},
-	title={Eigenstuff}
+	title={Linear somegebra? Linear \emph{all}gebra.}
 	}
 
 \begin{document}
 	\begin{tutorial}
 
-		\begin{objectives}
-	In this tutorial you will be working with eigenvectors and eigenvalues.
-
-	These problems relate to the following course learning objectives:
-			\textit{Clearly and correctly express the mathematical ideas of linear algebra to others}
-			and \textit{translate between algebraic and geometric viewpoints to solve problems}.
+		\begin{objectives} %TODO: Is writing all the learning objectives necessary?
+      In this session you will be working with linear algebra. Recall the course learning objectives:
+      \begin{itemize}
+        \item
+          \emph{Work independently to understand concepts and procedures that have not
+          been previously explained to you.}
+        \item
+          \emph{Clearly and correctly express the mathematical ideas of linear
+          algebra to others, and under- stand and apply logical arguments and
+          definitions that have been written by others.}
+        \item
+          \emph{Translate between algebraic and geometric viewpoints to solve
+          problems.}
+        \item
+          \emph{Use matrices, matrix arithmetic, matrix inverses, systems of linear
+          equations, row reduction, determinants, and eigenvalues and eigenvectors
+          to solve problems. As well, write vectors in different bases and pick an
+          appropriate basis when working on problems.}
+      \end{itemize}
 		\end{objectives}
-
 
 \begin{enumerate}
 	\item Let $T:\R^n\to\R^n$ be a linear transformation.

@@ -90,7 +90,7 @@
 		\large{\pgfkeys{/tutorial, term}}\\
 		\large{\pgfkeys{/tutorial, date}}
 		};
-	\draw ([yshift=-.5in, xshift=.15in]current page.north west) node[color=white, anchor=west] {\includegraphics[height=.8in]{uoft-logo-white.pdf}};
+	%\draw ([yshift=-.5in, xshift=.15in]current page.north west) node[color=white, anchor=west] {\includegraphics[height=.8in]{uoft-logo-white.pdf}};
 \end{tikzpicture}}
 \newcommand\Header{\begin{tikzpicture}[remember picture,overlay]
 	\newcommand{\rightpad}{.1in}
