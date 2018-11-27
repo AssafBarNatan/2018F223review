@@ -13,6 +13,7 @@
 \RequirePackage{atbegshi}
 \RequirePackage{eso-pic}
 \RequirePackage{newfile}
+\RequirePackage{textcomp}
 
 \newoutputstream{pagebounds}
 \openoutputfile{\jobname.pagebounds}{pagebounds}
@@ -62,12 +63,13 @@
 	part/.initial={}
 	} 
 % output a string appropriate for the part
+\newcommand{\copyleft}{\reflectbox{\copyright}}
 \newcommand{\tutorialPartTitle}{\pgfkeys{/tutorial, name} \pgfkeys{/tutorial, part}}
 \newcommand{\tutorialCopyright}{% if the author key is empty, the whole copyright line should be omitted
 	\setbox0=\hbox{\pgfkeys{/tutorial, author}\unskip}\ifdim\wd0=0pt
 	  %
 	\else
-	  \textcopyright~\pgfkeys{/tutorial, author}%
+	  \copyleft~\pgfkeys{/tutorial, author}%
 	\fi%
 }
 
