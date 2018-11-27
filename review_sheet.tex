@@ -8,7 +8,7 @@
 \setdefaultlanguage[variant=us]{english}
 %\usepackage[charter,cal=cmcal]{mathdesign} %different font
 %\usepackage{avant}
-\usepackage{microtype} % Less badboxes
+\usepackage{microtype} % Fewer badboxes
 
 
 \usepackage[charter,cal=cmcal]{mathdesign} %different font
@@ -99,23 +99,24 @@ title={Linear somegebra? Linear \emph{all}gebra.}
   \end{objectives}
 
   \begin{enumerate}
-    \item
-      The following sentences have errors or are missing something. Correct
+    \item The following sentences have errors or are missing 
+      something. Correct
       them or add the missing details.
       \begin{enumerate}
         \item
           % tests isolating ambiguity and finding missing quantification
-          A transformation $f\colon\R^n\to \R^m$ is linear if it sends sums to
-          sums, $f(\vec0) = \vec0$, and $f(\alpha \vec x) = \alpha f(\vec x)$.
+          A transformation $f\colon\R^n\to \R^m$ is linear if 
+          it sends sums to sums, $f(\vec0) = \vec0$, and 
+          $f(\alpha \vec x) = \alpha f(\vec x)$.
         \item
           % tests broad thinking to remember that a basis is necessary
           % tests mathematical convention
-          An $n\times m$ matrix represents a linear transformation from $\R^n$
+          An $n\times m$ matrix represents a linear 
+          transformation from $\R^n$
           to $\R^m$.
-        \item
-          % tests knowing the definition, and ignoring irrelevant info
-          A basis for the subspace $V$ is a set $S$ such that $\dim S = \dim V$
-          and $\Span(S) = V$.
+        \item % tests knowing the definition, and ignoring irrelevant info
+          A basis for the subspace $V$ is a set $S$ 
+          such that $\dim S = \dim V$ and $\Span(S) = V$.
         \item
           % tests type analysis and wrong quantifier
           $\vec w$ is a convex combination of $u$ and $v$ if:
@@ -125,6 +126,9 @@ title={Linear somegebra? Linear \emph{all}gebra.}
               +b\vec v \text{ for all } a,b\in [0,1]\,
             \bigr\}
           \end{equation*}
+        \item %orthogonality, algebra, and geometry
+          If $\vec a$, $\vec b$, and $\vec c$ are orthogonal 
+          vectors, then $\det \left[\vec a|\vec b|\vec c\right] = 1$.
       \end{enumerate}
     \item
       Sam has a function $T\colon\R^n\to \R^m$, which has the following
@@ -135,10 +139,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \begin{enumerate}
           % use the "definition of linearity"
           % understand the difference between sets and their contents
-        \item
-          What are the possible values of $T(\vec0)$?
-        \item
-          Tammy says that her function is not linear. Can this be true?
+        \item What are the possible values of $T(\vec0)$?
+        \item Sam says that their function is not linear. Can this be true?
       \end{enumerate}
     \item
       Orthogonality. % ALGEBRA <--> GEOMETRY
