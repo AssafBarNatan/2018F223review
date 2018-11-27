@@ -63,7 +63,7 @@
 	part/.initial={}
 	} 
 % output a string appropriate for the part
-\newcommand{\copyleft}{\reflectbox{\copyright}}
+\newcommand{\copyleft}{\reflectbox{\textcopyright}}
 \newcommand{\tutorialPartTitle}{\pgfkeys{/tutorial, name} \pgfkeys{/tutorial, part}}
 \newcommand{\tutorialCopyright}{% if the author key is empty, the whole copyright line should be omitted
 	\setbox0=\hbox{\pgfkeys{/tutorial, author}\unskip}\ifdim\wd0=0pt
