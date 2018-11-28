@@ -74,6 +74,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
 
 \begin{document}
 \begin{tutorial}
+  \mute{
   %Is writing all the learning objectives necessary?
   \begin{objectives} Is writing all the learning objectives necessary?
     In this session you will be working with linear algebra.
@@ -96,12 +97,17 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         to solve problems. As well, write vectors in different
         bases and pick an appropriate basis when working on problems.}
     \end{itemize}
+  \end{objectives}}
+  \begin{objectives}
+    This review session has one objective, and that is to 
+    \emph{Work in groups to identify course objectives that you 
+    are not comfortable with}.
   \end{objectives}
+
 
   \begin{enumerate}
     \item The following sentences have errors or are missing 
-      something. Correct
-      them or add the missing details.
+      something. Correct them or add the missing details.
       \begin{enumerate}
         \item
           % tests isolating ambiguity and finding missing quantification
@@ -131,6 +137,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           vectors in $\R^3$, then 
           $\det \left[\vec a|\vec b|\vec c\right] = 1$.
       \end{enumerate}
+      \mute{
     \item % Not a review question.
       Sam has a function $T\colon\R^n\to \R^m$, which has the following
       property:
@@ -143,8 +150,22 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item What are the possible values of $T(\vec0)$?
         \item Sam says that their function is not linear. Can this be true?
       \end{enumerate}
-    \item
-      Orthogonality. % ALGEBRA <--> GEOMETRY
+      }
+    \item % use definition of linearity, and know how to check 
+      % basic conditions
+      A transformation $T:\R^n\to \R^m$ is called 
+      \textit{almost linear} if for all $x,y\in \R^n$, we have 
+      $\|T(x+y)\| \le \|T(x)+T(y)\|$, and for all 
+      $\alpha\ge 0$ and $x\in \R^n$, we have 
+      $\|T(\alpha x)\|\le \alpha \|T(x)\|$.
+      \begin{itemize}
+        \item Write down a clear and concise explanation of what 
+          one must do in order to show that a transformation is 
+          almost linear.
+        \item Show that the transformation $f:\R\to\R$ defined 
+          by $f(x) = x^2$ is not almost linear.
+        \item Show that any linear transformation in almost linear.
+      \end{itemize}
     \item
       \newcommand{\pmin}{\phantom{-}}
       \newcommand{\row}[1]{\mathrm{r}_{#1}}
@@ -180,9 +201,10 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \end{bmatrix}&&
       \end{align*}
 
-    \item
-      For which values of $a$ is the matrix $A$ invertible? Compute the inverse
-      of $A$ when it exists (your answer may depend on $a$).
+    \item % Jason said he didn't like the second part of this question?
+      For which values of $a$ is the matrix $A$ invertible? 
+      Compute the inverse of $A$ when it exists 
+      (your answer may depend on $a$).
       \begin{equation*}
         A = 
         \begin{bmatrix}
