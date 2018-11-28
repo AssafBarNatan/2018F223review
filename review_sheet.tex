@@ -181,14 +181,27 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \end{align*}
 
     \item
-      For which values of $a$ is the following matrix invertible?
+      For which values of $a$ is the matrix $A$ invertible? Compute the inverse
+      of $A$ when it exists (your answer may depend on $a$).
       \begin{equation*}
+        A = 
         \begin{bmatrix}
           0 & 3 & 2 \\
           a & 0 & 0 \\
           8 & 2 & 0 \\
         \end{bmatrix}
       \end{equation*}
+    \item
+      Let $T\colon\R^2\to\R^2$ be the transformation which projects vectors
+      onto the subspace $V=\Span\{\vec v\}$, where $\vec v = \mat{1\\1}$.
+      \begin{enumerate}
+        \item 
+          Show that $T$ is linear.
+        \item
+          What are the eigenvectors of $T$? Is $T$ diagonalizable?
+        \item
+          How do the eigenvectors of $T$ relate to $V$ and $V^\perp$?
+      \end{enumerate}
   \end{enumerate}
 \end{tutorial}
 
@@ -326,7 +339,6 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       a vector is ``approximated''. The fact that $\|\vec v_1\|,\|\vec v_2\|\leq 100$ is essential
       for this, but isn't the point of the problem. The point is that there is a unique, largest, positive
       eigenvalue.
-
   \end{itemize}
 \end{instructions}
 }
