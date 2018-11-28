@@ -32,25 +32,70 @@ Determinants
 Eigenvalues & Diagonalization
 
 ------------------------
-Sections we are covering
+Sections we should cover
 ------------------------
-Math Notation
-Vectors
-SLE
-Dot products
-Projections
-Matrices (?)
-Linear transformations
-Inverses
-Determinants
-Eigenvalues & Diagonalization
+Vectors:
+  Drawing vectors
+  Computing distances between vectors
 
-----------------------------
-Sections we are not covering
-----------------------------
-Representations of lines and planes
-Spans
+Spans:
+  Translated Spans
+
+SLEs:
+  Convert between forms
+  Find solutions/prove consistency
+  Use row reduction to solve
+
 Linear (in)dependence
-Subspace & Bases
-Change of Basis & Coords
-Similar Matrices
+  The definition(?)
+
+Dot Products:
+  Determine sign of dot product from picture
+  
+Projections:
+  Definition
+  Relationship to comp
+  Relationship to orthogonality
+  
+Subspaces:
+  Determine subspaces
+  Find basis for subspace
+
+Change of basis:
+  Change bases of a vector
+  Find good bases
+  Compute change of basis matrix
+
+Linear transformations
+  Definitions
+  Find matrix representation
+  Determine in-bi-sur-jectivity
+  Fundamental subspaces (??)
+  Ranks
+
+Inverses
+  Determine if T is invertible
+  Compute inverse
+  Decompose into elementary matrices
+  Know formula for (AB)^-1
+
+Similar matrices
+  Find good bases
+  Write transformation in different bases
+
+Determinants
+  Definition
+  Geometric computations
+  Computations (direct and w/ formulas)
+  Compute volumes
+  Relationship to invertibility
+
+Eigenvectors & Diagonalization
+  All the definitions:
+    eigenvector, eigenspace, char. polynomial, multiplicity, etc..
+  Find diagonalization
+  Compute high powers of matrices
+
+Computational objectives:
+  Not sure...
+
