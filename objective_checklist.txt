@@ -1,7 +1,56 @@
 Below is a list of content-level objectives that we should cover.
 
-Things already covered
+------------------------
+Sections from midterm 1:
+------------------------
 
+Math Notation
+Vectors
+Representation of Lines and Planes
+Spans
+SLE
+Linear (in)dependence
+Dot products
 
+------------------------
+Sections from midterm 2:
+------------------------
 
-Things not already covered
+Projections
+Subspaces & Bases
+Matrices
+Change of basis & Co-ordinates
+Linear Transformations (no invertibility)
+
+-------------------------
+Sections not yet covered:
+-------------------------
+
+Inverses
+Similar matrices
+Determinants
+Eigenvalues & Diagonalization
+
+------------------------
+Sections we are covering
+------------------------
+Math Notation
+Vectors
+SLE
+Dot products
+Projections
+Matrices (?)
+Linear transformations
+Inverses
+Determinants
+Eigenvalues & Diagonalization
+
+----------------------------
+Sections we are not covering
+----------------------------
+Representations of lines and planes
+Spans
+Linear (in)dependence
+Subspace & Bases
+Change of Basis & Coords
+Similar Matrices
