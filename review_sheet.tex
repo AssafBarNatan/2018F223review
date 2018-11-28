@@ -109,21 +109,25 @@ title={Linear somegebra? Linear \emph{all}gebra.}
     \item The following sentences have errors or are missing 
       something. Correct them or add the missing details.
       \begin{enumerate}
-        \item
+          \mute{
+        \item \textbf{(Linear Transformations)}\\
+          %% Do we need this? Does this do the same as almost 
+          %% linear question?
           % tests isolating ambiguity and finding missing quantification
           A transformation $f\colon\R^n\to \R^m$ is linear if 
           it sends sums to sums, $f(\vec0) = \vec0$, and 
           $f(\alpha \vec x) = \alpha f(\vec x)$.
-        \item
+        \item 
           % tests broad thinking to remember that a basis is necessary
           % tests mathematical convention
           An $n\times m$ matrix corresponds to a linear 
           transformation from $\R^n$
-          to $\R^m$.
-        \item % tests knowing the definition, and ignoring irrelevant info
+          to $\R^m$.}
+        \item \textbf{(Subspaces \& Bases)}\\
+          % tests knowing the definition, and ignoring irrelevant info
           A basis for the subspace $V$ is a set $S$ 
           such that $\dim S = \dim V$ and $\Span(S) = V$.
-        \item
+        \item \textbf{(Vectors)}\\
           % tests type analysis and wrong quantifier
           $\vec w$ is a convex combination of $u$ and $v$ if:
           \begin{equation*}
@@ -132,7 +136,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
               +b\vec v \text{ for all } a,b\in [0,1]\,
             \bigr\}
           \end{equation*}
-        \item %orthogonality, algebra, and geometry
+        \item \textbf{(Determinants, Dot products)} \\
+          %orthogonality, algebra, and geometry
           If $\vec a$, $\vec b$, and $\vec c$ are pairwise orthogonal 
           vectors in $\R^3$, then 
           $\det \left[\vec a|\vec b|\vec c\right] = 1$.
@@ -151,7 +156,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item Sam says that their function is not linear. Can this be true?
       \end{enumerate}
       }
-    \item % use definition of linearity, and know how to check 
+    \item \textbf{(Linear Transformations)}\\
+      % use definition of linearity, and know how to check 
       % basic conditions
       A transformation $T:\R^n\to \R^m$ is called 
       \textit{almost linear} if for all $x,y\in \R^n$, we have 
@@ -166,7 +172,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           by $f(x) = x^2$ is not almost linear.
         \item Show that any linear transformation in almost linear.
       \end{itemize}
-    \item
+    \item \textbf{(Inverses)}\\
       \newcommand{\pmin}{\phantom{-}}
       \newcommand{\row}[1]{\mathrm{r}_{#1}}
       Mohammed has partially row-reduced the matrix $A$ using the
@@ -201,10 +207,10 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \end{bmatrix}&&
       \end{align*}
 
-    \item % Jason said he didn't like the second part of this question?
-      For which values of $a$ is the matrix $A$ invertible? 
-      Compute the inverse of $A$ when it exists 
-      (your answer may depend on $a$).
+    \item \textbf{(Determinants)}\\
+      % Jason said he didn't like the second part of this question?
+      For which values of $a$ is the matrix $A$ invertible? What 
+      is the image of $A$ when it is not invertible?
       \begin{equation*}
         A = 
         \begin{bmatrix}
@@ -213,7 +219,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           8 & 2 & 0 \\
         \end{bmatrix}
       \end{equation*}
-    \item
+    \item \textbf{(Eigenvalues \& Diagonalization)}
       Let $T\colon\R^2\to\R^2$ be the transformation which projects vectors
       onto the subspace $V=\Span\{\vec v\}$, where $\vec v = \mat{1\\1}$.
       \begin{enumerate}
@@ -223,77 +229,25 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item
           How do the eigenvectors of $T$ relate to $V$ and $V^\perp$?
       \end{enumerate}
+    \item \textbf{(Computational Objectives, Representations of Lines)}\\
+      Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
+      Define:
+      \begin{align*}
+        V = \{\vec x\in \R^2| \vec x \perp \vec a \text{and} 
+        \vec x \perp \vec b\}
+      \end{align*}
+      \begin{itemize}
+        \item Express $V$ as the set of solutions to an SLE
+        \item Express $V$ in parametric form
+        \item Express $V$ as the span of vectors
+        \item Sketch $V$.
+      \end{itemize}
   \end{enumerate}
 \end{tutorial}
 
 \mute{%XXX XXX XXX XXX BEGIN MUTE XXX XXX XXX XXX XXX
 \begin{solutions}
-  \begin{enumerate}
-    \item \begin{enumerate}
-        \item $\vec v$ is an eigenvector for $T$ if $\vec v\neq \vec 0$ and
-          $T\vec v=\lambda \vec v$ for some scalar $\lambda$.
-        \item $\vec v$ is an eigenvector for $T$ if it doesn't change directions
-          when $T$ is applied.
-      \end{enumerate}
-    \item
-      For $A$:
-      $\vec v_1$ is an eigenvector with eigenvalue $-1$;
-      $\vec v_2$ is an eigenvector with eigenvalue $2$.
-
-      For $B$:
-      $\vec v_2$ is an eigenvector with eigenvalue $2$;
-      $\vec v_4$ is an eigenvector with eigenvalue $-1$.
-
-      For $C$:
-      $\vec v_4$ is an eigenvector with eigenvalue $0$.
-    \item $\mathcal P$ has eigenvalues of $0$ and $1$. All non-zero multiples of $\mat{0\\1}$
-      have eigenvalue $0$ and non-zero multiples of $\mat{1\\0}$ have eigenvalue $1$.
-
-      $\mathcal R$ has no real eigenvalues and no real eigenvectors. Every non-zero
-      vector changes direction when $\mathcal R$ is applied.
-    \item It is not possible.
-
-      \emph{Proof:} Since $\vec v$ is an eigenvector for $T$ with eigenvalue
-      $2$, we know $T\vec v=2\vec v$. Since $T$ is linear, we know
-      \[
-      T(7\vec v)=7T\vec v=14\vec v,
-      \]
-      and so $7\vec v$ is an eigenvector for $T$ with eigenvalue $2$. There is no
-      other possibility.
-    \item
-      \begin{enumerate}
-        \item $T^{100}\vec w=\vec v_1+\tfrac{1}{2^{100}}\vec v_2 \approx \vec v_1$.
-        \item Yes. Since $\vec v_1$ and $\vec v_2$ are eigenvectors, neither is zero.
-          Suppose $\{\vec v_1,\vec v_2\}$ is linearly dependent. Then, $\vec v_1=t\vec v_2$
-          for some $t$ (because $\vec v_2\neq \vec 0$). Computing,
-          \[
-          T\vec v_1=T(t\vec v_2)=tT\vec v_2=\tfrac{t}{2}\vec v_2 = \tfrac{1}{2}\vec v_1,
-          \]
-          and so $\vec v_1$ would have an eigenvalue of $\tfrac{1}{2}$. But, this
-          is a contradiction since the eigenvalue
-          of $\vec v_1$ is $1$. Thus $\{\vec v_1,\vec v_2\}$ must be linearly independent.
-
-          Finally, a linearly independent set of two vectors in $\R^2$ must span all of $\R^2$,
-          and so $\{\vec v_1,\vec v_2\}$ is a basis for $\R^2$.
-        \item Yes. First write $\mat{a\\b}$ in the $\{\vec v_1,\vec v_2\}$ basis. Then throw away
-          the $\vec v_2$ component.
-
-          The matrix that converts from the standard basis to the $\{\vec v_1,\vec v_2\}$ basis is
-          \[
-          C=\mat{-5&3\\2&-1}.
-          \]
-          The matrix that drops second coordinate of a vector is
-          \[
-          D=\mat{1&0\\0&0}.
-          \]
-          Thus
-          \[
-          T^{100}\mat{a\\b} \approx C^{-1}DC\mat{a\\b}=\mat{-5a+3b\\-10a+6b}.
-          \]
-        \item Yes. Suppose $S$ has a unique, largest, positive eigenvalue $\lambda$. Then $S'=\tfrac{1}{\lambda}S$
-          behaves similarly to $T$. Approximate the same way, then multiply by $\lambda$.
-      \end{enumerate}
-  \end{enumerate}
+  Solutions go here.
 \end{solutions}
 \begin{instructions}
   \subsection*{Learning Objectives}
