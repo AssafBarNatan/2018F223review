@@ -123,7 +123,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           An $n\times m$ matrix corresponds to a linear 
           transformation from $\R^n$
           to $\R^m$.}
-        \item \textbf{(Subspaces \& Bases)}\\
+        \item \textbf{(Subspaces \& Bases; Span; Linear Independence)}\\
           % tests knowing the definition, and ignoring irrelevant info
           A basis for the subspace $V$ is a set $S$ 
           such that $\dim S = \dim V$ and $\Span(S) = V$.
@@ -141,6 +141,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           If $\vec a$, $\vec b$, and $\vec c$ are pairwise orthogonal 
           vectors in $\R^3$, then 
           $\det \left[\vec a\;\middle|\;\vec b\;\middle|\;\vec c\right] = 1$.
+        \item \textbf{(Eigenvectors \& Diagonalization)}\\
+          Every matrix has a basis of eigenvalues.
       \end{enumerate}
       \mute{
     \item % Not a review question.
@@ -206,11 +208,9 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 0 & 0 & 2
         \end{bmatrix}&&
       \end{align*}
-
-    \item \textbf{(Determinants)}\\
+    \item \textbf{(Determinants and Inverses; Subspaces)}\\
       % Jason said he didn't like the second part of this question?
-      For which values of $a$ is the matrix $A$ invertible? 
-      What is the rank of $A$ when it is not invertible?
+      We define:
       \begin{equation*}
         A = 
         \begin{bmatrix}
@@ -219,28 +219,37 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           8 & 2 & 0 \\
         \end{bmatrix}
       \end{equation*}
-    \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices)}\\
+      \begin{enumerate}
+        \item For which values of $a$ is 
+          the matrix $A$ invertible? 
+        \item What is the rank of $A$ when it is not invertible?
+        \item In the above case, find a basis for the image of $A$.
+      \end{enumerate}
+    \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices; 
+      Projections)}\\
       Let $T\colon\R^2\to\R^2$ be the transformation which projects vectors
       onto the subspace $V=\Span\{\vec v\}$, where $\vec v = \mat{1\\1}$.
       \begin{enumerate}
         \item Find an appropriate basis to express $T$ as a matrix.
-        \item
-          What are the eigenvectors of $T$? Is $T$ diagonalizable?
+        \item Is $T$ one-to-one? Is $T$ onto?
+        \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
+        \item Is $T$ invertible?
       \end{enumerate}
-    \item \textbf{(Computational Objectives, Representations of Lines)}\\
+    \item \textbf{(Computational Objectives; Representations of Lines; 
+      SLE)}\\
       Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
       Define:
       \begin{align*}
         V = \{\vec x\in \R^2| \vec x \perp \vec a \text{ and } 
         \vec x \perp \vec b\}
       \end{align*}
-      \begin{itemize}
+      \begin{enumerate}
         \item Express $V$ as the solution to an augmented matrix
         \item Express $V$ as a linear system
         \item Express $V$ in parametric form
         \item Express $V$ as the span of vectors
         \item Sketch $V$.
-      \end{itemize}
+      \end{enumerate}
   \end{enumerate}
 \end{tutorial}
 
