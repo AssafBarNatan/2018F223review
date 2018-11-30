@@ -38,6 +38,8 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\mat}[1]{\begin{bmatrix} #1 %
 \end{bmatrix}}
+\newcommand{\pmin}{\phantom{-}}
+\newcommand{\row}[1]{\mathrm{r}_{#1}}
 \newcommand{\mute}[1]{}
 
 \DeclareMathOperator{\proj} {proj}
@@ -74,37 +76,11 @@ title={Linear somegebra? Linear \emph{all}gebra.}
 
 \begin{document}
 \begin{tutorial}
-  \mute{
-  %Is writing all the learning objectives necessary?
-  \begin{objectives} Is writing all the learning objectives necessary?
-    In this session you will be working with linear algebra.
-    Recall the course learning objectives:
-    \begin{itemize}
-      \item
-        \emph{Work independently to understand concepts
-        and procedures that have not been previously explained to you.}
-      \item
-        \emph{Clearly and correctly express the mathematical ideas of linear
-        algebra to others, and understand and apply logical arguments and
-        definitions that have been written by others.}
-      \item
-        \emph{Translate between algebraic and geometric viewpoints to solve
-        problems.}
-      \item
-        \emph{Use matrices, matrix arithmetic, matrix
-        inverses, systems of linear equations, row reduction,
-        determinants, and eigenvalues and eigenvectors
-        to solve problems. As well, write vectors in different
-        bases and pick an appropriate basis when working on problems.}
-    \end{itemize}
-  \end{objectives}}
   \begin{objectives}
     This review session has one objective, and that is to 
-    \emph{Work in groups to identify course objectives that you 
-    are not comfortable with}.
+    \emph{work in groups to identify learning objectives that you 
+    are not comfortable with.}.
   \end{objectives}
-
-
   \begin{enumerate}
     \item The following sentences have errors or are missing 
       something. Correct them or add the missing details.
@@ -122,7 +98,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           % tests mathematical convention
           An $n\times m$ matrix corresponds to a linear 
           transformation from $\R^n$
-          to $\R^m$.}
+          to $\R^m$.
+          }
         \item \textbf{(Subspaces \& Bases; Span; Linear Independence)}\\
           % tests knowing the definition, and ignoring irrelevant info
           A basis for the subspace $V$ is a set $S$ 
@@ -133,7 +110,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           \begin{equation*}
             \vec w =
             \bigl\{\,\vec w:\vec w = a\vec u %
-              +b\vec v \text{ for all } a,b\in [0,1]\,
+            +b\vec v \text{ for all } a,b\in [0,1]\,
             \bigr\}
           \end{equation*}
         \item \textbf{(Determinants; Dot products)} \\
@@ -177,8 +154,6 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item Show that any linear transformation in almost linear.
       \end{enumerate}
     \item \textbf{(Inverses)}\\
-      \newcommand{\pmin}{\phantom{-}}
-      \newcommand{\row}[1]{\mathrm{r}_{#1}}
       Mohammed has partially row-reduced the matrix $A$ using the
       following steps. Use his work to write $A$ as a product of elementary
       matrices. Use this to compute $\det A$.
@@ -188,150 +163,119 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 1 & 0 & 0 \\
           1 & 0 & 0 & 0 \\
           1 & 0 & 3 & 0
-        \end{bmatrix}&\xrightarrow{\row{1} \leftrightarrow \row{3}}
-          \begin{bmatrix}
-            1 & 0 & 0 & 0 \\
-            0 & 1 & 0 & 0 \\
-            0 & 0 & 0 & 2 \\
-            1 & 0 & 3 & 0
-          \end{bmatrix}
-          \xrightarrow{\row{4} \to \row{4}-\row{1}}
-          \begin{bmatrix}
-            1 & 0 & 0 & 0 \\
-            0 & 1 & 0 & 0 \\
-            0 & 0 & 0 & 2 \\
-            0 & 0 & 3 & 0
-          \end{bmatrix}
-          &\xrightarrow{\row{4} \leftrightarrow \row{3}}
-          \begin{bmatrix}
-            1 & 0 & 0 & 0 \\
-            0 & 1 & 0 & 0 \\
-            0 & 0 & 3 & 0 \\
-            0 & 0 & 0 & 2
-          \end{bmatrix}&&
-          \end{align*}
-        \item \textbf{(Determinants and Inverses; Subspaces)}\\
-          % Jason said he didn't like the second part of this question?
-          We define:
-          \begin{equation*}
-            A = 
-            \begin{bmatrix}
-              0 & 3 & 2 \\
-              a & 0 & 0 \\
-              8 & 2 & 0 \\
-            \end{bmatrix}
-          \end{equation*}
-          \begin{enumerate}
-            \item For which values of $a$ is 
-              the matrix $A$ invertible? 
-            \item What is the rank of $A$ when it is not invertible?
-            \item In the above case, find a basis for the range 
-              of the transformation $T_A(x) = Ax$.
-          \end{enumerate}
-        \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices; 
-          Projections)}\\
-          Let $T\colon\R^2\to\R^2$ be the transformation which 
-          projects vectors onto the subspace $V=\Span\{\vec v\}$, 
-          where $\vec v = \mat{1\\1}$.
-          \begin{enumerate}
-            \item Write $T$ in the standard basis, and in one other basis. 
-              Which one do you prefer?
-            \item Is $T$ one-to-one? Is $T$ onto?
-            \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
-            \item Is $T$ invertible?
-          \end{enumerate}
-        \item \textbf{(Computational Objectives; Representations of Lines; 
-          SLE)}\\
-          Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
-          Define:
-          \begin{align*}
-            V = \left\{\vec x\in \R^2: %
-            \left(\vec x - \mat{0\\0\\1}\right)\perp \vec a \text{ and } 
-            \left(\vec x - \mat{0\\0\\1}\right)\perp \vec b\ \right\}
-          \end{align*}
-          \begin{enumerate}
-            \item Write down a system of linear equations where 
-              $V$ is the compelte solution set
-            \item Write down the corresponding augmented matrix.
-            \item Express $V$ in vector form.
-            \item Express $V$ as the span or translated span of 
-              vectors.
-            \item Sketch $V$.
-          \end{enumerate}
+        \end{bmatrix}
+        &\xrightarrow{\row{1} \leftrightarrow \row{3}}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 0 & 2 \\
+          1 & 0 & 3 & 0
+        \end{bmatrix}
+        \xrightarrow{\row{4} \to \row{4}-\row{1}}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 0 & 2 \\
+          0 & 0 & 3 & 0
+        \end{bmatrix}
+        &\xrightarrow{\row{4} \leftrightarrow \row{3}}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 3 & 0 \\
+          0 & 0 & 0 & 2
+        \end{bmatrix}
+        &&
+      \end{align*}
+    \item \textbf{(Determinants and Inverses; Subspaces)}\\
+      % Jason said he didn't like the second part of this question?
+      We define:
+      \begin{equation*}
+        A = 
+        \begin{bmatrix}
+          0 & 3 & 2 \\
+          a & 0 & 0 \\
+          8 & 2 & 0 \\
+        \end{bmatrix}
+      \end{equation*}
+      \begin{enumerate}
+        \item For which values of $a$ is 
+          the matrix $A$ invertible? 
+        \item What is the rank of $A$ when it is not invertible?
+        \item In the above case, find a basis for the range 
+          of the transformation $T_A(x) = Ax$.
       \end{enumerate}
-    \end{tutorial}
+    \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices; 
+      Projections)}\\
+      Let $T\colon\R^2\to\R^2$ be the transformation which 
+      projects vectors onto the subspace $V=\Span\{\vec v\}$, 
+      where $\vec v = \mat{1\\1}$.
+      \begin{enumerate}
+        \item Write $T$ in the standard basis, and in one other basis. 
+          Which one do you prefer?
+        \item Is $T$ one-to-one? Is $T$ onto?
+        \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
+        \item Is $T$ invertible?
+      \end{enumerate}
+    \item \textbf{(Computational Objectives; Representations of Lines; 
+      SLE)}\\
+      Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
+      Define:
+      \begin{align*}
+        V = \left\{\vec x\in \R^2: %
+        \left(\vec x - \mat{0\\0\\1}\right)\perp \vec a \text{ and } 
+        \left(\vec x - \mat{0\\0\\1}\right)\perp \vec b\ \right\}
+      \end{align*}
+      \begin{enumerate}
+        \item Write down a system of linear equations where 
+          $V$ is the compelte solution set
+        \item Write down the corresponding augmented matrix.
+        \item Express $V$ in vector form.
+        \item Express $V$ as the span or translated span of 
+          vectors.
+        \item Sketch $V$.
+      \end{enumerate}
+  \end{enumerate}
+\end{tutorial}
 
-    \mute{%XXX XXX XXX XXX BEGIN MUTE XXX XXX XXX XXX XXX
-    \begin{solutions}
-      Solutions go here.
-    \end{solutions}
-    \begin{instructions}
-      \subsection*{Learning Objectives}
-      Students need to be able to\ldots
-      \begin{itemize}
-        \item Define eigenvector and eigenvalue
-        \item Have an intuitive geometric understanding of eigenvectors
-        \item Use the definition of eigenvector to classify vectors as eigenvectors or not
-        \item Apply eigenvectors to solve problems
-      \end{itemize}
+\begin{solutions}
+  Solutions go here.
+\end{solutions}
 
-      \subsection*{Context}
-      Students have been introduced to determinants, characteristic polynomials, and the definition
-      of eigenvectors/values in lecture. Some students may have started diagonalization in
-      lecture.
+\begin{instructions}
+  \subsection*{Session Objectives}
+  We are pretty open about the fact that this session is 
+  for students to find their weak spots. We are happy if 
+  every student at least attempts every problem.
 
-      In this course we will only pursue real eigenvalues/vectors. Some students may know complex
-      numbers from high school, but most will not.
+  \subsection*{What to Do}
+  Unlike tutorials during the year, in this tutorial, it is 
+  ok if students do not finish a question before moving on to 
+  the next one. Walk around the room helping students for a 
+  fixed time for each question. Encourage multiple-group 
+  discussions, and allow groups to exchange ideas, like a 
+  mini-tutorial. After the allotted time for a question, 
+  there will be a short wrap-up. Rinse and repeat.
 
-
-      \subsection*{What to Do}
-      Start the tutorial by stating the day's learning objectives. Emphasize that eigenvectors/values
-      are the capstone of this course and they take a while to get used to. Today we are getting used
-      to them.
-
-      Have students start in groups on \#1. They should be used to the style of part (a) by now,
-      but they will probably struggle with part (b). Try to get them to produce something better than
-      reading the mathematical definition aloud.
-
-      \#2 is a computational question that follows straight from the definition. If you like,
-      divide the class into three teams.
-      One team will check for $A$, another for $B$, and the last for $C$. Write up (or have each
-      team write up) a summary of their results. Then have everyone verify each team's result.
-
-      Before finishing \#2, make sure to have a discussion about $\vec v_6$. Is it an eigenvector?
-      Does it go to a multiple of itself?
-
-      It is likely that \#1 and \#2 will take most of class time. If you do have extra time, continue as usual,
-      letting students work in small groups on \#3 and then having a mini-discussion when half the groups
-      have figured it out.
-
-      6 minutes before the end of class, pick a suitable problem to do as a wrap-up.
-
-
-      \subsection*{Notes}
-      \begin{itemize}
-        \item For \#1(b), many students will write ``$\vec v$ is an eigenvector for $T$ if
-          $\vec v$ is non-zero and $T$ of $\vec v$ is $\lambda$ times $\vec v$ for some scalar
-          $\lambda$.'' This is reading the mathematical definition aloud and is not what we want.
-          We want students to rephrase $T\vec v=\lambda \vec v$ in terms of a vector not changing
-          direction.
-        \item For \#2, some students will get confused between $\vec v\neq \vec 0$ and $\lambda \neq 0$.
-          $C,\vec v_4$ has eigenvalue $0$ precisely so this confusion will come up. Make sure to
-          have a conversation about this whether or not it comes up naturally.
-        \item Encourage students to draw pictures for \#3. They will naturally try to start by writing
-          down a matrix for $\mathcal P$ and $\mathcal R$, but that short-circuits thinking.
-        \item
-          When talking about eigenvalues of a transformation $T$
-          not existing, always make sure to say ``$T$ has no real eigenvalues''. Students who
-          know about complex numbers can have a deeper conversation with you about them after class.
-        \item In \#4, some might find it so ``obvious'' that they don't know how to prove it. That's largely
-          the point. They should be able to prove obvious things!
-        \item \#5 culminates in diagonalization, but it asks students to make a judgement about whether
-          a vector is ``approximated''. The fact that $\|\vec v_1\|,\|\vec v_2\|\leq 100$ is essential
-          for this, but isn't the point of the problem. The point is that there is a unique, largest, positive
-          eigenvalue.
-      \end{itemize}
-    \end{instructions}
-    }
-    %XXX XXX XXX XXX END MUTE XXX XXX XXX XXX XXX}
-    \end{document}
+  Some students will want to skip ahead to do things they 
+  either know how to do, or think they should practice. Try not 
+  to let students do this, and instead offer them to discuss 
+  with other groups.
+  \subsection*{Notes}
+  \begin{itemize}
+    \item Question 1 has math notation mistakes and math content 
+      mistakes. Try to get each group to notice at least one of each.
+    \item Students will struggle with question 2, and it's 
+      important that they are able to do parts a) and c) for this 
+      question.
+    \item Question 3 can be done by inspection, but students should 
+      do it by writing $A$ as a product of elementary matrices
+    \item Question 4 can be done by inspection, but if students 
+      insist on it being done this way, they should have a very 
+      good explanation to go along.
+    \item In Question 5 a), students might try to do some complicated 
+      calculus to find the minimal distance. This will work, but the 
+      shorter approach of using plane geometry is preferred.
+  \end{itemize}
+\end{instructions}
+\end{document}
