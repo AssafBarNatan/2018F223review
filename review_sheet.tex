@@ -162,10 +162,12 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       % use definition of linearity, and know how to check 
       % basic conditions
       A transformation $T:\R^n\to \R^m$ is called 
-      \textit{almost linear} if for all $x,y\in \R^n$, we have 
-      $\|T(x+y)\| \le \|T(x)+T(y)\|$, and for all 
-      $\alpha\ge 0$ and $x\in \R^n$, we have 
-      $\|T(\alpha x)\|\le \alpha \|T(x)\|$.
+      \textit{almost linear} if for all $x,y\in \R^n$, and 
+      $\alpha\ge 0$, we have 
+      \begin{align*}
+        \|T(x+y)\| &\le \|T(x)+T(y)\|\\
+        \|T(\alpha x)&\|\le \alpha \|T(x)\|
+      \end{align*}
       \begin{itemize}
         \item Write down a clear and concise explanation of what 
           one must do in order to show that a transformation is 
@@ -187,143 +189,149 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           1 & 0 & 0 & 0 \\
           1 & 0 & 3 & 0
         \end{bmatrix}&\xrightarrow{\row{1} \leftrightarrow \row{3}}
-        \begin{bmatrix}
-          1 & 0 & 0 & 0 \\
-          0 & 1 & 0 & 0 \\
-          0 & 0 & 0 & 2 \\
-          1 & 0 & 3 & 0
-        \end{bmatrix}
-        \xrightarrow{\row{4} \to \row{4}-\row{1}}
-        \begin{bmatrix}
-          1 & 0 & 0 & 0 \\
-          0 & 1 & 0 & 0 \\
-          0 & 0 & 0 & 2 \\
-          0 & 0 & 3 & 0
-        \end{bmatrix}
-        &\xrightarrow{\row{4} \leftrightarrow \row{3}}
-        \begin{bmatrix}
-          1 & 0 & 0 & 0 \\
-          0 & 1 & 0 & 0 \\
-          0 & 0 & 3 & 0 \\
-          0 & 0 & 0 & 2
-        \end{bmatrix}&&
-      \end{align*}
-    \item \textbf{(Determinants and Inverses; Subspaces)}\\
-      % Jason said he didn't like the second part of this question?
-      We define:
-      \begin{equation*}
-        A = 
-        \begin{bmatrix}
-          0 & 3 & 2 \\
-          a & 0 & 0 \\
-          8 & 2 & 0 \\
-        \end{bmatrix}
-      \end{equation*}
-      \begin{enumerate}
-        \item For which values of $a$ is 
-          the matrix $A$ invertible? 
-        \item What is the rank of $A$ when it is not invertible?
-        \item In the above case, find a basis for the image of $A$.
+          \begin{bmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 2 \\
+            1 & 0 & 3 & 0
+          \end{bmatrix}
+          \xrightarrow{\row{4} \to \row{4}-\row{1}}
+          \begin{bmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 2 \\
+            0 & 0 & 3 & 0
+          \end{bmatrix}
+          &\xrightarrow{\row{4} \leftrightarrow \row{3}}
+          \begin{bmatrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 3 & 0 \\
+            0 & 0 & 0 & 2
+          \end{bmatrix}&&
+          \end{align*}
+        \item \textbf{(Determinants and Inverses; Subspaces)}\\
+          % Jason said he didn't like the second part of this question?
+          We define:
+          \begin{equation*}
+            A = 
+            \begin{bmatrix}
+              0 & 3 & 2 \\
+              a & 0 & 0 \\
+              8 & 2 & 0 \\
+            \end{bmatrix}
+          \end{equation*}
+          \begin{enumerate}
+            \item For which values of $a$ is 
+              the matrix $A$ invertible? 
+            \item What is the rank of $A$ when it is not invertible?
+            \item In the above case, find a basis for the range 
+              of the transformation $T_A(x) = Ax$.
+          \end{enumerate}
+        \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices; 
+          Projections)}\\
+          Let $T\colon\R^2\to\R^2$ be the transformation which 
+          projects vectors onto the subspace $V=\Span\{\vec v\}$, 
+          where $\vec v = \mat{1\\1}$.
+          \begin{enumerate}
+            \item Write $T$ in the standard basis, and in one other basis. 
+              Which one do you prefer?
+            \item Is $T$ one-to-one? Is $T$ onto?
+            \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
+            \item Is $T$ invertible?
+          \end{enumerate}
+        \item \textbf{(Computational Objectives; Representations of Lines; 
+          SLE)}\\
+          Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
+          Define:
+          \begin{align*}
+            V = \left\{\vec x\in \R^2: %
+            \left(\vec x - \mat{0\\0\\1}\right)\perp \vec a \text{ and } 
+            \left(\vec x - \mat{0\\0\\1}\right)\perp \vec b\ \right\}
+          \end{align*}
+          \begin{enumerate}
+            \item Write down a system of linear equations where 
+              $V$ is the compelte solution set
+            \item Write down the corresponding augmented matrix.
+            \item Express $V$ in vector form.
+            \item Express $V$ as the span or translated span of 
+              vectors.
+            \item Sketch $V$.
+          \end{enumerate}
       \end{enumerate}
-    \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices; 
-      Projections)}\\
-      Let $T\colon\R^2\to\R^2$ be the transformation which projects vectors
-      onto the subspace $V=\Span\{\vec v\}$, where $\vec v = \mat{1\\1}$.
-      \begin{enumerate}
-        \item Find an appropriate basis to express $T$ as a matrix.
-        \item Is $T$ one-to-one? Is $T$ onto?
-        \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
-        \item Is $T$ invertible?
-      \end{enumerate}
-    \item \textbf{(Computational Objectives; Representations of Lines; 
-      SLE)}\\
-      Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$. 
-      Define:
-      \begin{align*}
-        V = \{\vec x\in \R^2| \vec x \perp \vec a \text{ and } 
-        \vec x \perp \vec b\}
-      \end{align*}
-      \begin{enumerate}
-        \item Express $V$ as the solution to an augmented matrix
-        \item Express $V$ as a linear system
-        \item Express $V$ in parametric form
-        \item Express $V$ as the span of vectors
-        \item Sketch $V$.
-      \end{enumerate}
-  \end{enumerate}
-\end{tutorial}
+    \end{tutorial}
 
-\mute{%XXX XXX XXX XXX BEGIN MUTE XXX XXX XXX XXX XXX
-\begin{solutions}
-  Solutions go here.
-\end{solutions}
-\begin{instructions}
-  \subsection*{Learning Objectives}
-  Students need to be able to\ldots
-  \begin{itemize}
-    \item Define eigenvector and eigenvalue
-    \item Have an intuitive geometric understanding of eigenvectors
-    \item Use the definition of eigenvector to classify vectors as eigenvectors or not
-    \item Apply eigenvectors to solve problems
-  \end{itemize}
+    \mute{%XXX XXX XXX XXX BEGIN MUTE XXX XXX XXX XXX XXX
+    \begin{solutions}
+      Solutions go here.
+    \end{solutions}
+    \begin{instructions}
+      \subsection*{Learning Objectives}
+      Students need to be able to\ldots
+      \begin{itemize}
+        \item Define eigenvector and eigenvalue
+        \item Have an intuitive geometric understanding of eigenvectors
+        \item Use the definition of eigenvector to classify vectors as eigenvectors or not
+        \item Apply eigenvectors to solve problems
+      \end{itemize}
 
-  \subsection*{Context}
-  Students have been introduced to determinants, characteristic polynomials, and the definition
-  of eigenvectors/values in lecture. Some students may have started diagonalization in
-  lecture.
+      \subsection*{Context}
+      Students have been introduced to determinants, characteristic polynomials, and the definition
+      of eigenvectors/values in lecture. Some students may have started diagonalization in
+      lecture.
 
-  In this course we will only pursue real eigenvalues/vectors. Some students may know complex
-  numbers from high school, but most will not.
+      In this course we will only pursue real eigenvalues/vectors. Some students may know complex
+      numbers from high school, but most will not.
 
 
-  \subsection*{What to Do}
-  Start the tutorial by stating the day's learning objectives. Emphasize that eigenvectors/values
-  are the capstone of this course and they take a while to get used to. Today we are getting used
-  to them.
+      \subsection*{What to Do}
+      Start the tutorial by stating the day's learning objectives. Emphasize that eigenvectors/values
+      are the capstone of this course and they take a while to get used to. Today we are getting used
+      to them.
 
-  Have students start in groups on \#1. They should be used to the style of part (a) by now,
-  but they will probably struggle with part (b). Try to get them to produce something better than
-  reading the mathematical definition aloud.
+      Have students start in groups on \#1. They should be used to the style of part (a) by now,
+      but they will probably struggle with part (b). Try to get them to produce something better than
+      reading the mathematical definition aloud.
 
-  \#2 is a computational question that follows straight from the definition. If you like,
-  divide the class into three teams.
-  One team will check for $A$, another for $B$, and the last for $C$. Write up (or have each
-  team write up) a summary of their results. Then have everyone verify each team's result.
+      \#2 is a computational question that follows straight from the definition. If you like,
+      divide the class into three teams.
+      One team will check for $A$, another for $B$, and the last for $C$. Write up (or have each
+      team write up) a summary of their results. Then have everyone verify each team's result.
 
-  Before finishing \#2, make sure to have a discussion about $\vec v_6$. Is it an eigenvector?
-  Does it go to a multiple of itself?
+      Before finishing \#2, make sure to have a discussion about $\vec v_6$. Is it an eigenvector?
+      Does it go to a multiple of itself?
 
-  It is likely that \#1 and \#2 will take most of class time. If you do have extra time, continue as usual,
-  letting students work in small groups on \#3 and then having a mini-discussion when half the groups
-  have figured it out.
+      It is likely that \#1 and \#2 will take most of class time. If you do have extra time, continue as usual,
+      letting students work in small groups on \#3 and then having a mini-discussion when half the groups
+      have figured it out.
 
-  6 minutes before the end of class, pick a suitable problem to do as a wrap-up.
+      6 minutes before the end of class, pick a suitable problem to do as a wrap-up.
 
 
-  \subsection*{Notes}
-  \begin{itemize}
-    \item For \#1(b), many students will write ``$\vec v$ is an eigenvector for $T$ if
-      $\vec v$ is non-zero and $T$ of $\vec v$ is $\lambda$ times $\vec v$ for some scalar
-      $\lambda$.'' This is reading the mathematical definition aloud and is not what we want.
-      We want students to rephrase $T\vec v=\lambda \vec v$ in terms of a vector not changing
-      direction.
-    \item For \#2, some students will get confused between $\vec v\neq \vec 0$ and $\lambda \neq 0$.
-      $C,\vec v_4$ has eigenvalue $0$ precisely so this confusion will come up. Make sure to
-      have a conversation about this whether or not it comes up naturally.
-    \item Encourage students to draw pictures for \#3. They will naturally try to start by writing
-      down a matrix for $\mathcal P$ and $\mathcal R$, but that short-circuits thinking.
-    \item
-      When talking about eigenvalues of a transformation $T$
-      not existing, always make sure to say ``$T$ has no real eigenvalues''. Students who
-      know about complex numbers can have a deeper conversation with you about them after class.
-    \item In \#4, some might find it so ``obvious'' that they don't know how to prove it. That's largely
-      the point. They should be able to prove obvious things!
-    \item \#5 culminates in diagonalization, but it asks students to make a judgement about whether
-      a vector is ``approximated''. The fact that $\|\vec v_1\|,\|\vec v_2\|\leq 100$ is essential
-      for this, but isn't the point of the problem. The point is that there is a unique, largest, positive
-      eigenvalue.
-  \end{itemize}
-\end{instructions}
-}
-%XXX XXX XXX XXX END MUTE XXX XXX XXX XXX XXX}
-\end{document}
+      \subsection*{Notes}
+      \begin{itemize}
+        \item For \#1(b), many students will write ``$\vec v$ is an eigenvector for $T$ if
+          $\vec v$ is non-zero and $T$ of $\vec v$ is $\lambda$ times $\vec v$ for some scalar
+          $\lambda$.'' This is reading the mathematical definition aloud and is not what we want.
+          We want students to rephrase $T\vec v=\lambda \vec v$ in terms of a vector not changing
+          direction.
+        \item For \#2, some students will get confused between $\vec v\neq \vec 0$ and $\lambda \neq 0$.
+          $C,\vec v_4$ has eigenvalue $0$ precisely so this confusion will come up. Make sure to
+          have a conversation about this whether or not it comes up naturally.
+        \item Encourage students to draw pictures for \#3. They will naturally try to start by writing
+          down a matrix for $\mathcal P$ and $\mathcal R$, but that short-circuits thinking.
+        \item
+          When talking about eigenvalues of a transformation $T$
+          not existing, always make sure to say ``$T$ has no real eigenvalues''. Students who
+          know about complex numbers can have a deeper conversation with you about them after class.
+        \item In \#4, some might find it so ``obvious'' that they don't know how to prove it. That's largely
+          the point. They should be able to prove obvious things!
+        \item \#5 culminates in diagonalization, but it asks students to make a judgement about whether
+          a vector is ``approximated''. The fact that $\|\vec v_1\|,\|\vec v_2\|\leq 100$ is essential
+          for this, but isn't the point of the problem. The point is that there is a unique, largest, positive
+          eigenvalue.
+      \end{itemize}
+    \end{instructions}
+    }
+    %XXX XXX XXX XXX END MUTE XXX XXX XXX XXX XXX}
+    \end{document}
