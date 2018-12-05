@@ -129,7 +129,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item \textbf{(Subspaces \& Bases; Span; Linear Independence)}\\
           % tests knowing the definition, and ignoring irrelevant info
           A basis for the subspace $V$ is a set $S$
-          such that $\dim S = \dim V$ and $\Span(S) = V$.
+          such that $\dim S = \dim V$ and $\Span S = V$.
         \item \textbf{(Vectors)}\\
           % tests type analysis and wrong quantifier
           Vector $\vec w$ is a convex combination of $\vec u$ and $\vec v$ if:
@@ -145,7 +145,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           vectors in $\R^3$, then
           $\det \bigl[\vec a\bigm|\vec b\bigm|\vec c\bigr] = 1$.
         \item \textbf{(Eigenvectors \& Diagonalization)}\\
-          Every matrix has a basis of eigenvalues.
+          Every matrix $A$ has a basis of eigenvalues.
       \end{enumerate}
       \mute{
     \item % Not a review question.
@@ -235,7 +235,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Projections)}\\
       Let $T\colon\R^2\to\R^2$ be the transformation which
       projects vectors onto the subspace $V=\Span\{\vec v\}$,
-      where $\vec v = \mat{1\\1}$.
+      where $\vec v = \smat{1\\1}$.
       \begin{enumerate}
         \item \label{q:standard_basis}
           Write $T$ in the standard basis, and in one other basis. Which one do
@@ -249,7 +249,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Let $\vec a = \smat{-1\\0\\1}$ and $\vec b = \smat{1\\0\\0}$.
       Define the set $V$ as
       \begin{align*}
-        V = \left\{\,\vec x\in \R^2: %
+        V = \left\{\,\vec x\in \R^2 :
         (\vec x - \vec e_3)\perp \vec a \text{ and }
         (\vec x - \vec e_3)\perp \vec b \,\right\}
       \end{align*}
@@ -286,7 +286,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           matrix to have a basis. This question is quite open-ended, and there
           are many directions the students can take this.
       \end{enumerate}
-    \item 
+    \item
       \begin{enumerate}
         \item
           To show that a transformation $T$ is almost linear, one needs to show
@@ -313,8 +313,9 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           which establishes almost linearity.
       \end{enumerate}
     \item
+      As a product of elementary matrices,
       \begin{align*}
-        A = 
+        A =
         \begin{bmatrix}
           0 & 0 & 1 & 0 \\
           0 & 1 & 0 & 0 \\
@@ -346,8 +347,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 0 & 0 & 2
         \end{bmatrix}
       \end{align*}
-      and the determinant of $A$ is $6$. % todo: add why this is true?
-    \item 
+      We have $\det A=(-1)\cdot1\cdot(-1)\cdot3\cdot2=6$.
+    \item
       \begin{enumerate}
         \item
           When $a=0$, the columns of $A$ are linearly dependent, so $A$ is not
@@ -368,11 +369,11 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           $[T]_{\mathcal{E}} = \displaystyle\frac12\mat{1&1\\1&1}$,
           and if $\mathcal{B} = \left\{\mat{1\\1},\mat{-1\\1}\right\}$,
           then $[T]_{\mathcal{B}} = \mat{1&0\\0&0}$.
-        \item $T$ is neither one-to-one nor onto. It is not 
-          one-to-one because $\vec 0$ and $\smat{-1\\1}$ are both sent 
-          to the same point. It is not onto because $\smat{0\\1}$ is not 
+        \item $T$ is neither one-to-one nor onto. It is not
+          one-to-one because $\vec 0$ and $\smat{-1\\1}$ are both sent
+          to the same point. It is not onto because $\smat{0\\1}$ is not
           in the image.
-        \item The eigenvalues of $T$ are $1$ and $0$, 
+        \item The eigenvalues of $T$ are $1$ and $0$,
           and $T$ is diagonalizable.
         \item Since $T$ is not one to one, it is not invertible.
       \end{enumerate}
@@ -387,11 +388,11 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item Using part \ref{q:SLE_sol}, we get
           \begin{equation*}
             \begin{bmatrix}[rrr@{\enspace}|@{\enspace}r]
-              -1 & 0 & 3 & 1 \\ 
+              -1 & 0 & 3 & 1 \\
                1 & 0 & 0 & 0 \\
             \end{bmatrix}
           \end{equation*}
-        \item 
+        \item
           The vector form of $V$ is
           \begin{align*}
             %V = \left\{\,
@@ -400,7 +401,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
             %\overbrace{\vec x = \mat{0\\0\\1} + t\mat{0\\1\\0}}^V\\
             \vec x = \mat{0\\0\\1} + t\mat{0\\1\\0}
           \end{align*}
-        \item 
+        \item
           We express $V$ as a translated span:
           \begin{align*}
             V = \mat{0\\0\\1} + \Span\left\{\mat{0\\1\\0}\right\}
