@@ -248,7 +248,115 @@ title={Linear somegebra? Linear \emph{all}gebra.}
 \end{tutorial}
 
 \begin{solutions}
-  Solutions go here.
+  \begin{enumerate}
+    \item Here are the things students should identify for 
+      each question:
+      \begin{enumerate}
+        \item Dimension does not make sense in this context, and 
+          the proper definition includes linear independence
+        \item $=$ should be $\in$, and the `for all` makes no 
+          sense there. Additionally, the condition is wrong. Students 
+          should also be able to make this answer shorter.
+        \item Students should replace $1$ with $\pm \|a\|\|b\|\|c\|$, 
+          and do this by understanding that the unit cube is sent to 
+          another cube.
+        \item The word `eigenvalues` should be replaced with 
+          `eigenvectors,` and even so, it does not make sense 
+          for a matrix to have a basis. This question is quite 
+          open-ended, and there are many directions the students 
+          can take this.
+      \end{enumerate}
+    \item 
+      \begin{enumerate}
+        \item To show that a transformation $T$ is almost 
+          linear, one needs to show that for any $x,y\in \R^n$ and 
+          $\lambda \in \R$ such that $\lambda\ge 0$:
+          \begin{itemize}
+            \item $\|T(x+y)\| \le \|T(x)+T(y)\|$
+            \item $\|T(\lambda x)\| \le \lambda \|T(x)\|$
+          \end{itemize}
+        \item Take $x = 2$ and $\lambda = 2$. Then 
+          $\|f(\lambda x)\| = 16$, but 
+          $\lambda \|T(x)\| = 2 \|4\| = 8$.
+        \item In a linear transformation, the first condition 
+          holds and is an equality. Now, let $\lambda \ge0$ be 
+          given, and let $x\in \R^n$. Then by linearity:
+          \begin{align*}
+            \|T(\lambda x)\| = \|\lambda T(x)\|
+            =|\lambda|\|T(x)\| = \lambda \|T(x)\|
+          \end{align*}
+          Showing almost linearity.
+      \end{enumerate}
+    \item
+      \begin{align*}
+        A = 
+        \begin{bmatrix}
+          0 & 0 & 1 & 0 \\
+          0 & 1 & 0 & 0 \\
+          1 & 0 & 0 & 0 \\
+          0 & 0 & 0 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 1 & 0 \\
+          1 & 0 & 0 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 0 & 1 \\
+          0 & 0 & 1 & 0
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 3 & 0 \\
+          0 & 0 & 0 & 1
+        \end{bmatrix}
+        \begin{bmatrix}
+          1 & 0 & 0 & 0 \\
+          0 & 1 & 0 & 0 \\
+          0 & 0 & 1 & 0 \\
+          0 & 0 & 0 & 2
+        \end{bmatrix}
+      \end{align*}
+      and the determinant of $A$ is $6$.
+    \item 
+      \begin{enumerate}
+        \item When $a=0$, the columns of $A$ are linearly dependent, so 
+          $A$ is not invertible. When $a\neq 0$, they are linearly 
+          independent, so the determinant is nonzero.
+        \item When $A$ is not invertible, $a=0$, in which case 
+          the columns of $A$ span a $2$-dimensional subspace of 
+          $\R^3$, meaning that the rank of $A$ is $2$.
+        \item $\left\{\mat{0\\0\\1} , \mat{1\\0\\0}\right\}$
+      \end{enumerate}
+    \item
+      \begin{enumerate}
+        \item $[T]_{\mathcal{E}} = \frac12\mat{1&1\\1&1}$, and 
+          if $\mathcal{B} = \left\{\mat{1&1},\mat{-1,1}\right\}$, then 
+          $[T]_{\mathcal{B}} = \mat{1&0\\0&0}$.
+        \item $T$ is neither one-to-one nor onto. It is not 
+          one-to-one because $\vec 0$ and $\mat{-1,1}$ are both sent 
+          to the same point. It is not onto because $\mat{0,1}$ is not 
+          in the image.
+        \item The eigenvalues of $T$ are $1$ and $0$, 
+          and $T$ is diagonalizable.
+        \item Since $T$ is not one to one, it is not invertible.
+      \end{enumerate}
+    \item
+      \begin{enumerate}
+        \item
+          \begin{align*}
+            -x_1 + x_3 &= 1\\
+            x_1 &= 0
+          \end{align*}
+        \item TODO
+        \item TODO
+        \item TODO
+      \end{enumerate}
+  \end{enumerate}
 \end{solutions}
 
 \begin{instructions}
