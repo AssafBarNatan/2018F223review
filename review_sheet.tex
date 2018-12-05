@@ -27,6 +27,7 @@
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{fnpct} % fancy footnote spacing
+\usepackage{csquotes}
 \usepackage{textcomp} %turn copyright into copyleft
 
 \delimitershortfall-1sp % Allow automatic growth of delimiters
@@ -38,16 +39,23 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
-\newcommand{\mat}[1]{\begin{bmatrix} #1 %
-\end{bmatrix}}
 \newcommand{\pmin}{\phantom{-}}
 \newcommand{\row}[1]{\mathrm{r}_{#1}}
+% Quick matrix command
+\newcommand{\mat}[1]{\begin{bmatrix} #1 %
+\end{bmatrix}}
+% Quick small matrix command
+\newcommand{\smat}[1]{\left[\begin{smallmatrix} #1 %
+\end{smallmatrix}\right]}
 \newcommand{\mute}[1]{}
 
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \makeatletter
 \let\oldnorm\norm
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
 \makeatother
 
 \DeclareMathOperator{\proj} {proj}
@@ -90,7 +98,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
     are not comfortable with}.
   \end{objectives}
   \begin{enumerate}
-    \item\label{q:mistake}
+    \item \label{q:mistake}
       The following sentences have errors or are missing something. Correct
       them or add the missing details.
       \begin{enumerate}
@@ -249,43 +257,50 @@ title={Linear somegebra? Linear \emph{all}gebra.}
 
 \begin{solutions}
   \begin{enumerate}
-    \item Here are the things students should identify for 
-      each question:
+    \item
+      Here are the things students should identify for each question:
       \begin{enumerate}
-        \item Dimension does not make sense in this context, and 
-          the proper definition includes linear independence
-        \item $=$ should be $\in$, and the `for all` makes no 
-          sense there. Additionally, the condition is wrong. Students 
-          should also be able to make this answer shorter.
-        \item Students should replace $1$ with $\pm \|a\|\|b\|\|c\|$, 
-          and do this by understanding that the unit cube is sent to 
-          another cube.
-        \item The word `eigenvalues` should be replaced with 
-          `eigenvectors,` and even so, it does not make sense 
-          for a matrix to have a basis. This question is quite 
-          open-ended, and there are many directions the students 
-          can take this.
+        \item
+          Dimension does not make sense in this context, and the proper
+          definition includes linear independence
+        \item
+          The equality \enquote{$=$} should be \enquote{$\in$}, and the
+          \enquote{for all} makes no sense there. Additionally, the condition
+          is wrong. Students should also be able to make this answer shorter.
+        \item
+          Students should replace $1$ with $\pm \norm{a}\norm{b}\norm{c}$, and
+          do this by understanding that the unit cube is sent to another cube.
+        \item
+          The word \enquote{eigenvalues} should be replaced with
+          \enquote{eigenvectors}, and even so, it does not make sense for a
+          matrix to have a basis. This question is quite open-ended, and there
+          are many directions the students can take this.
       \end{enumerate}
     \item 
       \begin{enumerate}
-        \item To show that a transformation $T$ is almost 
-          linear, one needs to show that for any $x,y\in \R^n$ and 
-          $\lambda \in \R$ such that $\lambda\ge 0$:
+        \item
+          To show that a transformation $T$ is almost linear, one needs to show
+          that for any $x$, $y\in \R^n$ and $\lambda \in \R$ with
+          $\lambda\ge 0$ that:
           \begin{itemize}
-            \item $\|T(x+y)\| \le \|T(x)+T(y)\|$
-            \item $\|T(\lambda x)\| \le \lambda \|T(x)\|$
+            \item $\norm*{T(x+y)} \le \norm*{T(x)+T(y)}$
+            \item $\norm*{T(\lambda x)} \le \lambda \norm*{T(x)}$
           \end{itemize}
-        \item Take $x = 2$ and $\lambda = 2$. Then 
-          $\|f(\lambda x)\| = 16$, but 
-          $\lambda \|T(x)\| = 2 \|4\| = 8$.
-        \item In a linear transformation, the first condition 
-          holds and is an equality. Now, let $\lambda \ge0$ be 
-          given, and let $x\in \R^n$. Then by linearity:
+        \item
+          Take for instance $x = 2$ and $\lambda = 2$.
+          Then $\norm*{f(\lambda x)} = 16$,
+          but $\lambda \norm*{T(x)} = 2 \norm*{4} = 8$.
+        \item
+          In a linear transformation, the first condition holds and is an
+          equality. Now, let $\lambda \ge0$ be given, and let $x\in \R^n$. Then
+          by linearity:
           \begin{align*}
-            \|T(\lambda x)\| = \|\lambda T(x)\|
-            =|\lambda|\|T(x)\| = \lambda \|T(x)\|
+            \norm*{T(\lambda x)}
+            = \norm*{\lambda T(x)}
+            = \abs{\lambda}\cdot\norm*{T(x)}
+            = \lambda \norm*{T(x)}
           \end{align*}
-          Showing almost linearity.
+          which establishes almost linearity.
       \end{enumerate}
     \item
       \begin{align*}
@@ -321,25 +336,30 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 0 & 0 & 2
         \end{bmatrix}
       \end{align*}
-      and the determinant of $A$ is $6$.
+      and the determinant of $A$ is $6$. % todo: add why this is true?
     \item 
       \begin{enumerate}
-        \item When $a=0$, the columns of $A$ are linearly dependent, so 
-          $A$ is not invertible. When $a\neq 0$, they are linearly 
-          independent, so the determinant is nonzero.
-        \item When $A$ is not invertible, $a=0$, in which case 
-          the columns of $A$ span a $2$-dimensional subspace of 
-          $\R^3$, meaning that the rank of $A$ is $2$.
-        \item $\left\{\mat{0\\0\\1} , \mat{1\\0\\0}\right\}$
+        \item
+          When $a=0$, the columns of $A$ are linearly dependent, so $A$ is not
+          invertible. When $a\neq 0$, they are linearly independent, so the
+          determinant is nonzero.
+        \item
+          When $A$ is not invertible, $a=0$, in which case the columns of $A$
+          span a $2$-dimensional subspace of $\R^3$, meaning that the rank of
+          $A$ is $2$.
+        \item
+          One basis is given by $\left\{\mat{0\\0\\1} , \mat{1\\0\\0}\right\}$
       \end{enumerate}
     \item
       \begin{enumerate}
-        \item $[T]_{\mathcal{E}} = \frac12\mat{1&1\\1&1}$, and 
-          if $\mathcal{B} = \left\{\mat{1&1},\mat{-1,1}\right\}$, then 
-          $[T]_{\mathcal{B}} = \mat{1&0\\0&0}$.
+        \item
+          We have
+          $[T]_{\mathcal{E}} = \displaystyle\frac12\mat{1&1\\1&1}$,
+          and if $\mathcal{B} = \left\{\mat{1\\1},\mat{-1\\1}\right\}$,
+          then $[T]_{\mathcal{B}} = \mat{1&0\\0&0}$.
         \item $T$ is neither one-to-one nor onto. It is not 
-          one-to-one because $\vec 0$ and $\mat{-1,1}$ are both sent 
-          to the same point. It is not onto because $\mat{0,1}$ is not 
+          one-to-one because $\vec 0$ and $\smat{-1\\1}$ are both sent 
+          to the same point. It is not onto because $\smat{0\\1}$ is not 
           in the image.
         \item The eigenvalues of $T$ are $1$ and $0$, 
           and $T$ is diagonalizable.
@@ -350,7 +370,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item
           \begin{align*}
             -x_1 + x_3 &= 1\\
-            x_1 &= 0
+            x_1 \phantom{{} + x_3}&= 0
           \end{align*}
         \item TODO
         \item TODO
