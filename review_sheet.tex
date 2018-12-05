@@ -41,6 +41,15 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\pmin}{\phantom{-}}
 \newcommand{\row}[1]{\mathrm{r}_{#1}}
+
+% Allow for augmented matrices
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+\array{#1}}
+\makeatother
+
 % Quick matrix command
 \newcommand{\mat}[1]{\begin{bmatrix} #1 %
 \end{bmatrix}}
@@ -236,7 +245,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \end{enumerate}
     \item \textbf{(Computational Objectives; Representations of Lines;
       SLE)}\\
-      Let $\vec a = \mat{-1\\0\\1}$ and $\vec b = \mat{1\\0\\0}$.
+      Let $\vec a = \smat{-1\\0\\1}$ and $\vec b = \smat{1\\0\\0}$.
       Define the set $V$ as
       \begin{align*}
         V = \left\{\,\vec x\in \R^2: %
@@ -367,20 +376,26 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \end{enumerate}
     \item
       \begin{enumerate}
-        \item
+        \item\label{q:SLE_sol}
           \begin{align*}
             -x_1 + x_3 &= 1\\
             x_1 \phantom{{} + x_3}&= 0
           \end{align*}
-        \item TODO
+        \item Using part \ref{q:SLE_sol}, we get
+          \begin{equation*}
+            \begin{bmatrix}[rrr@{\enspace}|@{\enspace}r]
+              -1 & 0 & 3 & 1 \\ 
+               1 & 0 & 0 & 0 \\
+            \end{bmatrix}
+          \end{equation*}
         \item 
           \begin{align*}
-            V = \left\{\mat{0\\0\\1} + t\mat{0\\1\\0}%
-            \text{for $t\in \R$}\right\}
+            V = \left\{\,\mat{0\\0\\1} + t\mat{0\\1\\0}%
+                :t\in \R\,\right\}
           \end{align*}
         \item 
           \begin{align*}
-            V = \mat{0\\0\\1} + \Span{\mat{0\\1\\0}}
+            V = \mat{0\\0\\1} + \Span\left\{\mat{0\\1\\0}\right\}
           \end{align*}
         \item
           Whatever students do, they should make sure that $V$ 
