@@ -45,8 +45,8 @@
 % Allow for augmented matrices
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-\hskip -\arraycolsep
-\let\@ifnextchar\new@ifnextchar
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
 \array{#1}}
 \makeatother
 
@@ -108,8 +108,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
   \end{objectives}
   \begin{enumerate}
     \item \label{q:mistake}
-      The following sentences have errors or are missing something. Correct
-      them or add the missing details.
+      The following sentences have errors or are missing something. 
+      Correct them or add the missing details.
       \begin{enumerate}
           \mute{
         \item \textbf{(Linear Transformations)}\\
@@ -125,14 +125,15 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           An $n\times m$ matrix corresponds to a linear
           transformation from $\R^n$
           to $\R^m$.
-          }
+        }
         \item \textbf{(Subspaces \& Bases; Span; Linear Independence)}\\
           % tests knowing the definition, and ignoring irrelevant info
           A basis for the subspace $V$ is a set $S$
           such that $\dim S = \dim V$ and $\Span S = V$.
         \item \textbf{(Vectors)}\\
           % tests type analysis and wrong quantifier
-          Vector $\vec w$ is a convex combination of $\vec u$ and $\vec v$ if:
+          The vector $\vec w$ is a convex combination 
+          of $\vec u$ and $\vec v$ if:
           \begin{equation*}
             \vec w =
             \bigl\{\,\vec w:\vec w = a\vec u %
@@ -152,8 +153,8 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Sam has a function $T\colon\R^n\to \R^m$, which has the following
       property:
       \begin{center}
-        For any subspace $V\subseteq \R^n$, we have $T(V)$ is a subspace of
-        $\R^m$.
+        For any subspace $V\subseteq \R^n$, we have $T(V)$ 
+        is a subspace of $\R^m$.
       \end{center}
       \begin{enumerate}
           % use the "definition of linearity"
@@ -162,7 +163,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
         \item Sam says that their function is not linear. Can this be true?
       \end{enumerate}
       }
-    \item \label{q:lin_transform}\textbf{(Linear Transformations)}\\
+    \item \label{q:lin_transform}\textbf{(Working with New Definitions)}\\
       % use definition of linearity, and know how to check
       % basic conditions
       A transformation $T\colon\R^n\to \R^m$ is called
@@ -174,32 +175,32 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \end{align*}
       \begin{enumerate}
         \item \label{q:definition_expansion}
-          Write down a clear and concise explanation of what one must do in
-          order to show that a transformation is almost linear.
+          Write down a numbered list of what one must do in order 
+          to show that a transformation is almost linear.
         \item Show that the transformation $f\colon\R\to\R$ defined
           by $f(x) = x^2$ is not almost linear.
         \item \label{q:lin_almost_lin}
           Show that any linear transformation is almost linear.
       \end{enumerate}
-    \item \label{q:inverses} \textbf{(Inverses)}\\
+    \item \label{q:inverses} \textbf{(Inverses \& Elementary Matrices)}\\
       Mohammed has partially row-reduced the matrix $A$ using the
-      following steps. Use his work to write $A$ as a product of elementary
-      matrices. Use this to compute $\det A$.
+      following steps. Use his work to write $A$ as a 
+      product of elementary matrices. Use this to compute $\det A$.
       \begin{align*}
         A = \begin{bmatrix}
           0 & 0 & 0 & 2 \\
           0 & 1 & 0 & 0 \\
           1 & 0 & 0 & 0 \\
-          1 & 0 & 3 & 0
+          2 & 0 & 3 & 0
         \end{bmatrix}
         &\xrightarrow{\row{1} \leftrightarrow \row{3}}
         \begin{bmatrix}
           1 & 0 & 0 & 0 \\
           0 & 1 & 0 & 0 \\
           0 & 0 & 0 & 2 \\
-          1 & 0 & 3 & 0
+          2 & 0 & 3 & 0
         \end{bmatrix}
-        \xrightarrow{\row{4} \to \row{4}-\row{1}}
+        \xrightarrow{\row{4} \to \row{4}-2\row{1}}
         \begin{bmatrix}
           1 & 0 & 0 & 0 \\
           0 & 1 & 0 & 0 \\
@@ -214,32 +215,33 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 0 & 0 & 2
         \end{bmatrix}
       \end{align*}
-      \pagebreak % XXX: only keep if this helps with asthetics.
-    \item \label{q:determinants} \textbf{(Determinants and Inverses; Subspaces)}\\
+    \pagebreak % XXX: only keep if this helps with asthetics.
+    \item \label{q:determinants} \textbf{(Determinants and 
+      Inverses; Subspaces)}\\
       We define:
       \begin{equation*}
         A =
         \mat{
-        0 & 3 & 2 \\
-        a & 0 & 0 \\
-        8 & 2 & 0 \\
+          0 & 3 & 2 \\
+          x & 0 & 0 \\
+          8 & 2 & 0 \\
         }
       \end{equation*}
       \begin{enumerate}
-        \item For which values of $a$ is the matrix $A$ invertible?
+        \item For which values of $x$ is the matrix $A$ invertible?
         \item What is the rank of $A$ when it is not invertible?
         \item When $A$ is not invertible, find a basis for the range of the
-          transformation $T_A(x) = Ax$.
+          transformation $T_A(\vec v) = A\vec v$.
       \end{enumerate}
     \item \textbf{(Eigenvalues \& Diagonalization; Similar Matrices;
       Projections)}\\
-      Let $T\colon\R^2\to\R^2$ be the transformation which
-      projects vectors onto the subspace $V=\Span\{\vec v\}$,
+      Let $T\colon\R^2\to\R^2$ be the linear transformation which
+      projects vectors onto the subspace $X=\Span\{\vec v\}$,
       where $\vec v = \smat{1\\1}$.
       \begin{enumerate}
         \item \label{q:standard_basis}
-          Write $T$ in the standard basis, and in one other basis. Which one do
-          you prefer?
+          Write $T$ in the standard basis, and in one other 
+          basis. Which one do you prefer?
         \item Is $T$ one-to-one? Is $T$ onto?
         \item What are the eigenvectors of $T$? Is $T$ diagonalizable?
         \item Is $T$ invertible?
@@ -250,16 +252,17 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Define the set $V$ as
       \begin{align*}
         V = \left\{\,\vec x\in \R^2 :
-        (\vec x - \vec e_3)\perp \vec a \text{ and }
-        (\vec x - \vec e_3)\perp \vec b \,\right\}
+        (\vec x - \vec e_3)\cdot \vec a = %
+        (\vec x - \vec e_3)\cdot \vec b =0 \,\right\}
       \end{align*}
       \begin{enumerate}
         \item Write down a system of linear equations where
-          $V$ is the complete solution set.
-        \item Write down the corresponding augmented matrix.
+              $V$ is the complete solution set to the system.
+        \item Write down the corresponding augmented matrix 
+          to the system.
         \item Express $V$ in vector form.
         \item Express $V$ as the span or translated span of
-          vectors.
+              vectors.
         \item Sketch $V$.
       \end{enumerate}
   \end{enumerate}
@@ -275,11 +278,13 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           definition includes linear independence
         \item
           The equality \enquote{$=$} should be \enquote{$\in$}, and the
-          \enquote{for all} makes no sense there. Additionally, the condition
-          is wrong. Students should also be able to make this answer shorter.
+          \enquote{for all} is incorrect. Additionally, the condition 
+          $a,b\in [0,1]$ is wrong. Students should also 
+          be able to make this answer shorter.
         \item
           Students should replace $1$ with $\pm \norm{a}\norm{b}\norm{c}$, and
-          do this by understanding that the unit cube is sent to another cube.
+          do this by understanding that the unit cube is sent to a 
+          rectangular prism.
         \item
           The word \enquote{eigenvalues} should be replaced with
           \enquote{eigenvectors}, and even so, it does not make sense for a
@@ -288,16 +293,14 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       \end{enumerate}
     \item
       \begin{enumerate}
-        \item
-          To show that a transformation $T$ is almost linear, one needs to show
-          that for any $x$, $y\in \R^n$ and $\lambda \in \R$ with
+        \item To show that a transformation $T$ is almost linear, one needs to
+          show that for any $x$, $y\in \R^n$ and $\lambda \in \R$ with
           $\lambda\ge 0$ that:
           \begin{itemize}
             \item $\norm*{T(x+y)} \le \norm*{T(x)+T(y)}$
             \item $\norm*{T(\lambda x)} \le \lambda \norm*{T(x)}$
           \end{itemize}
-        \item
-          Take for instance $x = 2$ and $\lambda = 2$.
+        \item Take for instance $x = 2$ and $\lambda = 2$.
           Then $\norm*{f(\lambda x)} = 16$,
           but $\lambda \norm*{T(x)} = 2 \norm*{4} = 8$.
         \item
@@ -307,7 +310,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           \begin{align*}
             \norm*{T(\lambda x)}
             = \norm*{\lambda T(x)}
-            = \abs{\lambda}\cdot\norm*{T(x)}
+            = \abs{\lambda}\norm{T(x)}
             = \lambda \norm*{T(x)}
           \end{align*}
           which establishes almost linearity.
@@ -326,7 +329,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           1 & 0 & 0 & 0 \\
           0 & 1 & 0 & 0 \\
           0 & 0 & 1 & 0 \\
-          1 & 0 & 0 & 1
+          2 & 0 & 0 & 1
         \end{bmatrix}
         \begin{bmatrix}
           1 & 0 & 0 & 0 \\
@@ -347,21 +350,21 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           0 & 0 & 0 & 2
         \end{bmatrix}
       \end{align*}
-      We have $\det A=(-1)\cdot1\cdot(-1)\cdot3\cdot2=6$.
+      We have $\det A=(-1)(1)(-1)(3)(2)=6$.
     \item
       \begin{enumerate}
         \item
-          When $a=0$, the columns of $A$ are linearly dependent, so $A$ is not
-          invertible. When $a\neq 0$, they are linearly independent, so the
+          When $x=0$, the columns of $A$ are linearly dependent, so $A$ is not
+          invertible. When $x\neq 0$, they are linearly independent, so the
           determinant is nonzero.
         \item
-          When $A$ is not invertible, $a=0$, in which case the columns of $A$
+          When $A$ is not invertible, $x=0$, in which case the columns of $A$
           span a $2$-dimensional subspace of $\R^3$, meaning that the rank of
           $A$ is $2$.
         \item
           One basis is given by $\left\{\mat{0\\0\\1} , \mat{1\\0\\0}\right\}$
       \end{enumerate}
-      \pagebreak % XXX: only keep if this helps with asthetics.
+    \pagebreak % XXX: only keep if this helps with asthetics.
     \item
       \begin{enumerate}
         \item
@@ -389,15 +392,15 @@ title={Linear somegebra? Linear \emph{all}gebra.}
           \begin{equation*}
             \begin{bmatrix}[rrr@{\enspace}|@{\enspace}r]
               -1 & 0 & 3 & 1 \\
-              1 & 0 & 0 & 0 \\
+               1 & 0 & 0 & 0 \\
             \end{bmatrix}
           \end{equation*}
         \item
           The vector form of $V$ is
           \begin{align*}
             %V = \left\{\,
-            %\mat{0\\0\\1} + t\mat{0\\1\\0} :t\in \R
-            %\,\right\}\\
+                  %\mat{0\\0\\1} + t\mat{0\\1\\0} :t\in \R
+                %\,\right\}\\
             %\overbrace{\vec x = \mat{0\\0\\1} + t\mat{0\\1\\0}}^V\\
             \vec x = \mat{0\\0\\1} + t\mat{0\\1\\0}
           \end{align*}
@@ -420,19 +423,16 @@ title={Linear somegebra? Linear \emph{all}gebra.}
   problem.
 
   \subsection*{What to Do}
-  Unlike tutorials during the year, in this tutorial, 
-  it is okay if students do not finish a question before 
-  moving on to the next one. Walk around the room helping 
-  students for a fixed time for each question. 
-  Encourage multiple-group discussions, and allow groups 
-  to exchange ideas, like a mini-tutorial. After the 
-  allotted time for a question, there will be a short 
-  wrap-up. Rinse and repeat.
+  Unlike tutorials during the year, in this tutorial, it is okay 
+  if students do not finish a question before moving on to the next 
+  one. Walk around the room helping students for a fixed time for 
+  each question. After the allotted time for a question, there will 
+  be a short wrap-up. Rinse and repeat.
 
-  Some students will want to skip ahead to do things 
-  they either know how to do, or think they should 
-  practice. Do not to let students do this; instead
-  encourage them to discuss with other groups.
+  Some students will want to skip ahead to do things they either know how to
+  do, or think they should practice. Instad, ask them to look at the 
+  practice midterms 1 \& 2, and the final practice questions to find 
+  questions relevant to the course objective at hand.
   \subsection*{Notes}
   \begin{itemize}
     \item
@@ -443,13 +443,11 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       important that they are able to do \ref{q:definition_expansion} and
       \ref{q:lin_almost_lin}.
     \item
-      Question \ref{q:inverses} can be done by 
-      inspection, but students should do it by 
-      writing $A$ as a product of elementary matrices
+      Question \ref{q:inverses} can be done by inspection, but students should
+      do it by writing $A$ as a product of elementary matrices
     \item
-      Question \ref{q:determinants} can be done by 
-      inspection, but if students insist on it 
-      being done this way, they should have a very good
+      Question \ref{q:determinants} can be done by inspection, but if students
+      insist on it being done this way, they should have a very good
       explanation to go along.
     \item
       In question \ref{q:standard_basis}, students might try to do some
