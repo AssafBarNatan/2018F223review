@@ -167,11 +167,11 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       % use definition of linearity, and know how to check
       % basic conditions
       A transformation $T\colon\R^n\to \R^m$ is called
-      \emph{almost linear} if for all $x$, $y\in \R^n$, and
+      \emph{almost linear} if for all $\vec x$, $\vec y\in \R^n$, and
       $\alpha\ge 0$, we have
       \begin{align*}
-        \norm*{T(x+y)} &\le \norm*{T(x)+T(y)}\\
-        \norm*{T(\alpha x)}&\le \alpha \norm*{T(x)}
+        \norm*{T(\vec x+\vec y)} &\le \norm*{T(\vec x)+T(\vec y)}\\
+        \norm*{T(\alpha \vec x)}&\le \alpha \norm*{T(\vec x)}
       \end{align*}
       \begin{enumerate}
         \item \label{q:definition_expansion}
@@ -186,6 +186,7 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Mohammed has partially row-reduced the matrix $A$ using the
       following steps. Use his work to write $A$ as a 
       product of elementary matrices. Use this to compute $\det A$.
+      %% Idea: keep row operations, remove the matrices
       \begin{align*}
         A = \begin{bmatrix}
           0 & 0 & 0 & 2 \\
@@ -251,9 +252,9 @@ title={Linear somegebra? Linear \emph{all}gebra.}
       Let $\vec a = \smat{-1\\0\\1}$ and $\vec b = \smat{1\\0\\0}$.
       Define the set $V$ as
       \begin{align*}
-        V = \left\{\,\vec x\in \R^2 :
-        (\vec x - \vec e_3)\cdot \vec a = %
-        (\vec x - \vec e_3)\cdot \vec b =0 \,\right\}
+        V = \left\{\,\vec x\in \R^3 :
+        (\vec x - \vec e_3)\cdot \vec a = 0%
+        = (\vec x - \vec e_3)\cdot \vec b \,\right\}
       \end{align*}
       \begin{enumerate}
         \item Write down a system of linear equations where
